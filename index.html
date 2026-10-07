@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test | آزمون‌ساز هوشمند</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile-fix.css">
+    <link rel="stylesheet" href="css/nav-enhancement.css">
+</head>
+<body>
+    <div class="background-animation" aria-hidden="true">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+    </div>
+
+    <div class="app-container">
+        <header class="glass-header" role="banner">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Test</h1>
+                </div>
+                <nav class="header-nav">
+                    <button id="btn-home" class="nav-btn active"><i class="fas fa-home"></i><span>خانه</span></button>
+                    <button id="btn-library" class="nav-btn"><i class="fas fa-book"></i><span>کتابخانه</span></button>
+                    <button id="btn-upload" class="nav-btn"><i class="fas fa-cloud-upload-alt"></i><span>بارگذاری</span></button>
+                    <button id="btn-history" class="nav-btn"><i class="fas fa-history"></i><span>تاریخچه</span></button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content" role="main">
+
+            <!-- Welcome -->
+            <section id="screen-welcome" class="screen active">
+                <div class="welcome-card glass-card">
+                    <div class="welcome-icon"><i class="fas fa-rocket"></i></div>
+                    <h2>به آزمون‌ساز Test خوش آمدید</h2>
+                    <p class="welcome-subtitle">فایل آزمون خود را بارگذاری کنید یا از کتابخانه انتخاب کنید</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-book"></i></div>
+                            <h3>کتابخانه آزمون</h3>
+                            <p>آزمون‌های آماده</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-file-code"></i></div>
+                            <h3>بارگذاری فایل</h3>
+                            <p>فایل JS آپلود کنید</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                            <h3>کارنامه کامل</h3>
+                            <p>پاسخنامه و نمره</p>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="btn-go-library" class="btn btn-primary btn-lg"><i class="fas fa-book"></i><span>کتابخانه آزمون‌ها</span></button>
+                        <button id="btn-start-sample" class="btn btn-secondary btn-lg"><i class="fas fa-play"></i><span>آزمون نمونه</span></button>
+                        <button id="btn-upload-cta" class="btn btn-secondary btn-lg"><i class="fas fa-upload"></i><span>بارگذاری فایل</span></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Library -->
+            <section id="screen-library" class="screen">
+                <div class="library-card glass-card">
+                    <h2><i class="fas fa-book"></i> کتابخانه آزمون‌ها</h2>
+                    <p class="library-desc">آزمون مورد نظر خود را انتخاب کنید</p>
+                    <div id="library-list" class="library-list"></div>
+                    <div class="empty-state" id="empty-library" style="display:none;">
+                        <i class="fas fa-folder-open"></i>
+                        <p>هیچ آزمونی موجود نیست</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Upload -->
+            <section id="screen-upload" class="screen">
+                <div class="upload-card glass-card">
+                    <h2><i class="fas fa-cloud-upload-alt"></i> بارگذاری فایل آزمون</h2>
+                    <div class="upload-zone" id="drop-zone" role="button" tabindex="0">
+                        <i class="fas fa-file-upload"></i>
+                        <p>فایل جاوااسکریپت را اینجا رها کنید</p>
+                        <p class="upload-hint">یا</p>
+                        <label for="file-input" class="btn btn-primary"><i class="fas fa-folder-open"></i><span>انتخاب فایل</span></label>
+                        <input type="file" id="file-input" accept=".js,.json" hidden>
+                        <p class="upload-formats">فرمت‌های مجاز: .js, .json</p>
+                    </div>
+                    <div class="divider"><span>یا</span></div>
+                    <div class="url-input-group">
+                        <label for="url-input">آدرس URL فایل:</label>
+                        <div class="input-wrapper">
+                            <input type="url" id="url-input" placeholder="https://example.com/quiz.js">
+                            <button id="btn-load-url" class="btn btn-primary"><i class="fas fa-link"></i><span>بارگذاری</span></button>
+                        </div>
+                    </div>
+                    <div class="format-guide glass-card-subtle">
+                        <h3><i class="fas fa-info-circle"></i> فرمت مورد انتظار</h3>
+                        <pre><code>const quizData = {
+  title: "عنوان آزمون",
+  questions: [
+    {
+      question: "متن سوال",
+      options: ["گزینه ۱", "گزینه ۲", "گزینه ۳", "گزینه ۴"],
+      correct: 0,
+      explanation: "توضیح پاسخ"
+    }
+  ]
+};</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz -->
+            <section id="screen-quiz" class="screen">
+                <div class="quiz-card glass-card">
+                    <div class="quiz-header">
+                        <h2><i class="fas fa-question-circle"></i> <span id="current-quiz-title">آزمون</span></h2>
+                        <div class="quiz-meta">
+                            <div class="meta-item"><i class="fas fa-list-ol"></i> <span id="question-counter">سوال ۱ از ۱۰</span></div>
+                            <div class="meta-item"><i class="fas fa-clock"></i> <span id="timer">00:00</span></div>
+                        </div>
+                    </div>
+                    <div class="progress-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <div class="question-area" id="question-area"></div>
+                    <div class="quiz-navigation">
+                        <button id="btn-prev" class="btn btn-secondary" disabled><i class="fas fa-arrow-right"></i><span>قبلی</span></button>
+                        <button id="btn-next" class="btn btn-primary"><span>بعدی</span><i class="fas fa-arrow-left"></i></button>
+                        <button id="btn-submit" class="btn btn-success" style="display:none;"><i class="fas fa-check-circle"></i><span>پایان آزمون</span></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results -->
+            <section id="screen-results" class="screen">
+                <div class="results-card glass-card">
+                    <div class="results-header"><h2><i class="fas fa-trophy"></i> کارنامه آزمون</h2></div>
+                    <div class="score-circle">
+                        <svg viewBox="0 0 200 200">
+                            <circle class="score-bg" cx="100" cy="100" r="90"></circle>
+                            <circle class="score-progress" cx="100" cy="100" r="90" id="score-progress-circle"></circle>
+                        </svg>
+                        <div class="score-text">
+                            <span class="score-value" id="score-value">0</span>
+                            <span class="score-label">از ۱۰۰</span>
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item correct"><i class="fas fa-check-circle"></i><div class="stat-content"><span class="stat-value" id="stat-correct">0</span><span class="stat-label">صحیح</span></div></div>
+                        <div class="stat-item wrong"><i class="fas fa-times-circle"></i><div class="stat-content"><span class="stat-value" id="stat-wrong">0</span><span class="stat-label">غلط</span></div></div>
+                        <div class="stat-item unanswered"><i class="fas fa-minus-circle"></i><div class="stat-content"><span class="stat-value" id="stat-unanswered">0</span><span class="stat-label">بدون پاسخ</span></div></div>
+                        <div class="stat-item time"><i class="fas fa-clock"></i><div class="stat-content"><span class="stat-value" id="stat-time">00:00</span><span class="stat-label">زمان</span></div></div>
+                    </div>
+                    <div class="answer-sheet">
+                        <h3><i class="fas fa-clipboard-list"></i> پاسخنامه تفصیلی</h3>
+                        <div id="answer-sheet-content" class="answer-sheet-content"></div>
+                    </div>
+                    <div class="results-actions">
+                        <button id="btn-retry" class="btn btn-primary"><i class="fas fa-redo"></i><span>تلاش مجدد</span></button>
+                        <button id="btn-new-quiz" class="btn btn-secondary"><i class="fas fa-plus"></i><span>آزمون جدید</span></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History -->
+            <section id="screen-history" class="screen">
+                <div class="history-card glass-card">
+                    <h2><i class="fas fa-history"></i> تاریخچه آزمون‌ها</h2>
+                    <div id="history-list" class="history-list"></div>
+                    <div class="empty-state" id="empty-history" style="display:none;">
+                        <i class="fas fa-inbox"></i>
+                        <p>هنوز آزمونی ثبت نشده</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="glass-footer"><p>ساخته شده با <i class="fas fa-heart"></i></p></footer>
+    </div>
+
+    <div id="toast" class="toast" role="alert"><i class="fas fa-info-circle"></i><span id="toast-message"></span></div>
+    <div id="loading-overlay" class="loading-overlay" style="display:none;"><div class="spinner"></div><p>در حال بارگذاری...</p></div>
+
+    <script src="data/sample-quiz.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/quiz-engine.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/mobile-optimizer.js"></script>
+</body>
+</html>

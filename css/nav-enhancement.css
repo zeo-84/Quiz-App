@@ -1,0 +1,153 @@
+/* Navigation Enhancement */
+.header-nav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-family);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.nav-btn i {
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-btn span {
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.nav-btn:hover i {
+    transform: scale(1.1);
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-btn.active i {
+    color: #ffd700;
+    transform: scale(1.15);
+}
+
+.nav-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    border-radius: 2px;
+}
+
+/* Ripple effect */
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.nav-btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .header-nav {
+        gap: 0.3rem;
+        padding: 0.2rem;
+    }
+
+    .nav-btn {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.75rem;
+    }
+
+    .nav-btn i {
+        font-size: 1rem;
+    }
+
+    .nav-btn span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-btn {
+        padding: 0.6rem;
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* Logo enhancement */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.logo h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff 0%, #ffd700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logo i {
+    font-size: 1.5rem;
+    color: #ffd700;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}

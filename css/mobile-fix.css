@@ -1,0 +1,144 @@
+/* Mobile Optimizations - Auto Generated */
+@media (max-width: 768px) {
+    :root {
+        --spacing-xs: 0.35rem;
+        --spacing-sm: 0.65rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 1.3rem;
+        --spacing-xl: 1.8rem;
+        --radius-sm: 0.4rem;
+        --radius-md: 0.7rem;
+        --radius-lg: 1rem;
+        --font-size-sm: 0.75rem;
+        --font-size-base: 0.85rem;
+        --font-size-lg: 0.95rem;
+        --font-size-xl: 1.05rem;
+        --font-size-2xl: 1.2rem;
+        --font-size-3xl: 1.4rem;
+        --font-size-4xl: 1.6rem;
+    }
+
+    html { font-size: 14px; }
+
+    body { line-height: 1.5; }
+
+    /* Header */
+    .glass-header { padding: 0.4rem 0.6rem; }
+    .logo { font-size: 1rem; gap: 0.3rem; }
+    .logo i { font-size: 1.2rem; }
+    .logo h1 { font-size: 1.1rem; }
+    .nav-btn { padding: 0.3rem 0.5rem; font-size: 0.7rem; gap: 0.2rem; }
+    .nav-btn i { font-size: 0.85rem; }
+
+    /* Cards */
+    .glass-card { padding: 1.2rem; margin: 0.6rem; }
+    .glass-card-subtle { padding: 0.8rem; }
+
+    /* Welcome */
+    .welcome-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .welcome-card h2 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .welcome-subtitle { font-size: 0.8rem; margin-bottom: 1.2rem; }
+    .feature-grid { gap: 0.7rem; margin: 1.2rem 0; }
+    .feature-item { padding: 0.8rem; }
+    .feature-icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+    .feature-item h3 { font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .feature-item p { font-size: 0.7rem; }
+
+    /* Buttons */
+    .btn { padding: 0.5rem 0.8rem; font-size: 0.8rem; gap: 0.3rem; }
+    .btn-lg { padding: 0.7rem 1.2rem; font-size: 0.85rem; }
+    .action-buttons { gap: 0.5rem; }
+
+    /* Library */
+    .library-card h2 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .library-desc { font-size: 0.75rem; margin-bottom: 1rem; }
+    .library-list { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.7rem; }
+    .library-item { padding: 1rem; gap: 0.4rem; }
+    .library-item-icon { font-size: 1.8rem; }
+    .library-item-title { font-size: 0.85rem; }
+    .library-item-count { font-size: 0.7rem; }
+    .library-item-btn { padding: 0.4rem 0.6rem; font-size: 0.75rem; }
+
+    /* Upload */
+    .upload-card h2 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .upload-zone { padding: 1.2rem; }
+    .upload-zone i { font-size: 2rem; margin-bottom: 0.5rem; }
+    .upload-zone p { font-size: 0.8rem; }
+
+    /* Quiz */
+    .quiz-card { margin: 0.5rem; }
+    .quiz-header { margin-bottom: 0.8rem; }
+    .quiz-header h2 { font-size: 0.95rem; }
+    .quiz-meta { gap: 0.7rem; }
+    .meta-item { font-size: 0.7rem; }
+    .meta-item i { font-size: 0.75rem; }
+    .progress-container { height: 6px; margin-bottom: 1rem; }
+    .question-area { min-height: 280px; margin-bottom: 1rem; }
+    .question-text { font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.7; }
+    .option-item { padding: 0.7rem; gap: 0.5rem; }
+    .option-letter { width: 32px; height: 32px; font-size: 0.8rem; }
+    .option-text { font-size: 0.8rem; }
+
+    /* Results */
+    .results-header h2 { font-size: 1.3rem; }
+    .score-circle { width: 140px; height: 140px; margin: 1.2rem auto; }
+    .score-value { font-size: 1.8rem; }
+    .score-label { font-size: 0.7rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; margin: 1.2rem 0; }
+    .stat-item { padding: 0.7rem; gap: 0.4rem; }
+    .stat-item i { font-size: 1.3rem; }
+    .stat-value { font-size: 1.1rem; }
+    .stat-label { font-size: 0.65rem; }
+    .answer-sheet h3 { font-size: 1rem; margin-bottom: 0.8rem; }
+    .answer-item { padding: 0.8rem; margin-bottom: 0.6rem; }
+    .answer-question { font-size: 0.85rem; margin-bottom: 0.4rem; }
+    .answer-details { font-size: 0.7rem; gap: 0.2rem; }
+    .explanation { padding: 0.6rem; font-size: 0.75rem; }
+
+    /* History */
+    .history-card h2 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .history-item { padding: 0.8rem; }
+    .history-title { font-size: 0.85rem; }
+    .history-date { font-size: 0.65rem; }
+    .history-score { font-size: 1.1rem; }
+
+    /* Footer */
+    .glass-footer { padding: 0.6rem; font-size: 0.7rem; }
+
+    /* Toast */
+    .toast { padding: 0.5rem 0.8rem; font-size: 0.75rem; bottom: 15px; }
+
+    /* Loading */
+    .spinner { width: 40px; height: 40px; border-width: 3px; }
+    .loading-overlay p { font-size: 0.9rem; }
+}
+
+@media (max-width: 400px) {
+    :root {
+        --spacing-xs: 0.3rem;
+        --spacing-sm: 0.5rem;
+        --spacing-md: 0.8rem;
+        --spacing-lg: 1rem;
+        --spacing-xl: 1.4rem;
+    }
+
+    html { font-size: 13px; }
+
+    .glass-card { padding: 0.9rem; margin: 0.4rem; }
+    .library-list { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .library-item { padding: 0.8rem; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .btn-lg { width: 100%; justify-content: center; }
+    .action-buttons { flex-direction: column; }
+}
+
+/* Fix overflow issues */
+@media (max-width: 768px) {
+    .header-content { flex-wrap: nowrap; }
+    .header-nav { flex-wrap: nowrap; }
+    .quiz-header { flex-wrap: nowrap; }
+    .quiz-navigation { flex-wrap: nowrap; }
+    .results-actions { flex-wrap: wrap; }
+    .option-item { flex-wrap: nowrap; }
+}
