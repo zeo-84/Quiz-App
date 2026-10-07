@@ -1,6 +1,6 @@
 // Quiz-App Service Worker
-const CACHE_NAME = 'quiz-app-v2';
-const VERSION = '1.0.1';
+const CACHE_NAME = 'quiz-app-v3';
+const VERSION = '1.0.2';
 
 const STATIC_ASSETS = [
     './', './index.html', './css/style.css', './css/mobile-fix.css',
